@@ -10,3 +10,12 @@ pub fn read_file(path: String) -> String {
         }
     };
 }
+
+pub fn search_case_insensitive(content: String, keyword: String) -> Vec<String> {
+    let keyword = keyword.to_lowercase();
+    return content
+        .lines()
+        .filter(|line| line.to_lowercase().contains(&keyword))
+        .map(String::from)
+        .collect();
+}
