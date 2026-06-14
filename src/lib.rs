@@ -2,7 +2,7 @@ use std::fs;
 
 pub fn run(config: Config) {
     let filedata = search(config.query, read_file(config.file_name));
-    print!("result: {}", filedata.len());
+    println!("\n");
     for line in filedata {
         println!("{}", line);
     }
